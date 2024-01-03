@@ -10,4 +10,5 @@ class ProjectColors {
   static Color backgroundWhite = const Color.fromARGB(255, 255, 255, 255);
   static Color backgroundGrey = const Color.fromARGB(255, 240, 240, 240);
   static Color transparentColor = Colors.transparent;
+  static Color redColor = const Color.fromARGB(255, 182, 71, 63);
 }

@@ -12,6 +12,7 @@ class FoodModel {
   final int carbs;
   final int prot;
   final String description;
+  final String materials;
   FoodModel(
       {required this.name,
       required this.image,
@@ -23,7 +24,8 @@ class FoodModel {
       required this.fats,
       required this.carbs,
       required this.prot,
-      required this.description
+      required this.description,
+      required this.materials,
       });
 }
 
@@ -44,7 +46,8 @@ final trendFoods = [
 Makarnayı bol tuzlu suda haşlayın. Biberleri jülyen doğrayın, yağı tavaya alın ve biberleri soteleyin.Sarımsakları ekleyerek kavurun.Biberler kavrulunca
 krema,süt ve hardal ekleyerek kısık ateşte pişirmeye devam edin.Krema kaynamaya başlayınca baharatları da ekleyerek 1-2 dakika daha pişirin.Sosu ocaktan
 alın ve dereout, maydonoz ekleyerek karıştırın.Haşlanıp süzülen makarnanızı da üzerine ekleyip tekrar karıştırın.Servise hazırdır.
-"""),
+""",
+ materials: 'Makarna,Krema,Un,Tuz,Yağ'),
   FoodModel(
       name: "Tavuklu Pilav",
       image: JpgImageItems.pilav.jpgPath,
@@ -61,7 +64,8 @@ alın ve dereout, maydonoz ekleyerek karıştırın.Haşlanıp süzülen makarna
 Tavukları tencereye koyup, üzerini bir parmak geçecek şekilde su ekleyip kaynamaya bırakın. Haşlanan tavukların işi bitince soğuması için kenara alın.
 Biraz soğuduktan sonra tiftikleyerek ayırın.Bir yandan pirinci ılık suya koyup nişastasını çıkarın.Pilav tenceresine yağ ekleyip eridiğinde
 şehriyeleri kavurun.Zamanı gelince pirinci ekleyip kavurmaya devam edin.Ardından tavuğu ekleyin.Kısık ateşte pişirip, baharatlayıp servis edebilirsiniz.
-"""),
+""",
+ materials: 'Pirinç,Tavuk Göğsü,Baharat,Tuz,Yağ'),
   FoodModel(
       name: "Kuru Fasülye",
       image: JpgImageItems.fasulye.jpgPath,
@@ -78,7 +82,8 @@ Biraz soğuduktan sonra tiftikleyerek ayırın.Bir yandan pirinci ılık suya ko
  4 yemek kaşığı sıvı yağ ve 2 yemek kaşığı tereyağını tencereye koyup kızdırın. Doğranmış kuru soğanı ekleyip pembeleşinceye dek kavurun.Soğanlar kavrulduktan
  sonra salça ekleyip kokusu çıkana kadar tekrar kavurun.Son olarak bir gece önceden suda beklettiğiniz fasülyeleri tencereye ekleyin.1-2 dakika karıştırıp
  baharatlarını ve tuzunu ekleyerek kapağını kapatın.Kısık ateşte fasulyeleri pişirdikten sonra servise hazırdır.
-"""),
+""",
+ materials: 'Fasülye,Yağ,Baharat'),
 ];
 
 final newestFoods = [
@@ -97,7 +102,8 @@ final newestFoods = [
 """
 Kızdırılmış yağda her iki yüzeyini de çevirerek kızartın.Harcın çok akışkan olmaması için patatesleri kabuk ile haşlayabilirsiniz.Kroketleri donduruncuda
 bekletmeden yapmak isterseniz 2 yemek kaşığı mısır nişastası ekleyebilirsiniz.Sıcak servis edilmelidir ve fazla yağı süzdürülmelidir.
-"""),
+""", 
+materials: 'Patates,Un,Yağ'),
   FoodModel(
       name: "Izgara Köfte",
       image: JpgImageItems.kofte.jpgPath,
@@ -114,7 +120,8 @@ bekletmeden yapmak isterseniz 2 yemek kaşığı mısır nişastası ekleyebilir
 Soğan ve sarımsakları rendeleyin. Maydanozu ince olacak şekilde kıyın. Baharatları ekleyip iyice yoğurun. En az 5 dakika kadar yoğurulmalıdır.İçinde
 ekmek,yumurta ve maydanoz mutlaka olmalıdır.Harcı hazırladıktan sonra şekil verin ve ardından 2 saat kadar buzdolabında dinlendirin.Sonrasında ızgarada
 pişirerek afiyetle yiyebilirsiniz.
-"""),
+""", 
+materials: 'Kıyma,Ekmek,Baharat,Tuz,Karabiber'),
   FoodModel(
       name: "Tavuk Sote",
       image: JpgImageItems.sote.jpgPath,
@@ -131,5 +138,6 @@ pişirerek afiyetle yiyebilirsiniz.
 Tavuk etini kuşbaşı doğrayın.Soğanları yemeklik, biberleri julyen doğrayın.Domatesleri de küp küp doğrayın.Kısık ateşte tavukları arada karıştırarak
 kavurun.Suyunu biraz çektikten sonra soğanları ve ince kesilmiş sarımsağı ekleyin.1-2 dakika kavurduktan sonra biberleri ilave edin.Biberler de
 sotelenince domatesi,salçayı,baharatları ve tuzu ekleyip pişirin.Afiyet olsun.
-"""),
+""", 
+materials: 'Tavuk Göğsü, Tuz, Karabiber,Kekik,Kimyon,Yağ'),
 ];
