@@ -9,13 +9,19 @@ import 'package:food_recipe_app/utility/colors.dart';
 class DetailView extends StatelessWidget {
   final FoodModel food;
   const DetailView({Key? key, required this.food}) : super(key: key);
+  final String textPoint = "Puan";
+  final String myExpandText = "devamını gör";
+  final String myCollapseText = "daha azını gör";
+  final String materialsText = "Malzemeler :";
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ProjectColors.backgroundBlack,
-      appBar:
-          AppBar(backgroundColor: ProjectColors.transparentColor, elevation: 0),
+      appBar: AppBar(
+          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+          elevation: 0),
       body: ListView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -33,9 +39,7 @@ class DetailView extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              rateColumn(context), 
-              timeColumn(context)],
+            children: [rateColumn(context), timeColumn(context)],
           ),
           const SizedBox(
             height: 20,
@@ -53,8 +57,8 @@ class DetailView extends StatelessWidget {
           ),
           ExpandableText(
             food.description,
-            expandText: "devamını gör",
-            collapseText: "daha azını gör",
+            expandText: myExpandText,
+            collapseText: myCollapseText,
             maxLines: 4,
             style: Theme.of(context)
                 .textTheme
@@ -84,6 +88,8 @@ class DetailView extends StatelessWidget {
               )
             ],
           ),
+          const Padding(padding: EdgeInsets.all(12)),
+          MaterialsRow(materialsText: materialsText, food: food),
         ],
       ),
     );
@@ -92,10 +98,19 @@ class DetailView extends StatelessWidget {
   Column rateColumn(BuildContext context) {
     return Column(
       children: [
-        Text("⭐ ${food.rate.toString()}"),
         Text(
-          "Puan",
-          style: Theme.of(context).textTheme.bodyLarge,
+          "⭐ ${food.rate.toString()}",
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(color: ProjectColors.white),
+        ),
+        Text(
+          textPoint,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(color: ProjectColors.white),
         )
       ],
     );
@@ -104,12 +119,39 @@ class DetailView extends StatelessWidget {
   Column timeColumn(BuildContext context) {
     return Column(
       children: [
-        Text(" ${food.duration.toString()}"),
+        Text(
+          " ${food.duration.toString()}",
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(color: ProjectColors.white),
+        ),
         Text(
           "🕒",
           style: Theme.of(context).textTheme.bodyLarge,
         )
       ],
+    );
+  }
+}
+
+class MaterialsRow extends StatelessWidget {
+  const MaterialsRow({
+    super.key,
+    required this.materialsText,
+    required this.food,
+  });
+
+  final String materialsText;
+  final FoodModel food;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+      Text(materialsText,style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w900),),
+      const SizedBox(width: 5),
+      Text(food.materials,style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ProjectColors.backgroundGrey),)
+    ],
     );
   }
 }
@@ -150,7 +192,7 @@ class PieChartCircular extends StatelessWidget {
                     style: const TextStyle(color: Colors.grey),
                   ),
                   Text(
-                    "${gr.toString()}",
+                    gr.toString(),
                     style: TextStyle(color: ProjectColors.white),
                   )
                 ],

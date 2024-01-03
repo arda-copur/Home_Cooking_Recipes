@@ -40,7 +40,7 @@ class HomeView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Text(
                  questionText,
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ProjectColors.white),
               ),
             ),
             Container(
@@ -110,7 +110,7 @@ class HomeView extends StatelessWidget {
                 children: [
                   Text(
                     popularText,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(color: ProjectColors.white),
                   ),
                   TextButton(
                     onPressed: () {},
@@ -146,7 +146,7 @@ class HomeView extends StatelessWidget {
                 children: [
                   Text(
                     newestText,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(color: ProjectColors.white),
                   ),
                   TextButton(
                     onPressed: () {},
